@@ -18,10 +18,9 @@ def update():
     clans = iter(groups) if groups != [] else None
     checker = len(groups)
 
-
+update()
 @dp.message_handler(ChatTypeFilter(chat_type=types.ChatType.PRIVATE), text='Искать клан')
 async def scroll(message: types.message):
-    update()
     try:
         await dp.throttle('scroll', rate=3)
     except Throttled:
